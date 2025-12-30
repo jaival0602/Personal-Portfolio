@@ -4,7 +4,6 @@ import { useState, useEffect, useRef } from "react";
 import { VscTerminalBash, VscChromeClose } from "react-icons/vsc";
 import {
   generateAIResponse,
-  initializeGemini,
   isResumeRelated,
 } from "../utils/chatbot";
 
@@ -112,34 +111,9 @@ export default function UnifiedTerminal({
     // Auto-activate input on mount
     setIsInputActive(true);
 
-    // Initialize Gemini API
-    const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
-    if (apiKey && apiKey !== "your_gemini_api_key_here") {
-      const success = initializeGemini(apiKey);
-      setIsInitialized(success);
-      if (!success) {
-        const errorLine: TerminalLine = {
-          id: "error-init",
-          type: "error",
-          content: "AI is not initialized.",
-          timestamp: new Date(),
-          isTyping: true,
-        };
-        setLines((prev) => [...prev, errorLine]);
-        setTypingLineId(errorLine.id);
-      }
-    } else {
-      const errorLine: TerminalLine = {
-        id: "error-no-key",
-        type: "error",
-        content:
-          "No API key found. Please set NEXT_PUBLIC_GEMINI_API_KEY in your .env.local file.",
-        timestamp: new Date(),
-        isTyping: true,
-      };
-      setLines((prev) => [...prev, errorLine]);
-      setTypingLineId(errorLine.id);
-    }
+    // We assume the server-side API is ready. 
+    // If the key is missing on server, the API call will return a 503 error handled by generateAIResponse.
+    setIsInitialized(true);
   }, []);
 
   // Auto-scroll to bottom
