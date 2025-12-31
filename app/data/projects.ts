@@ -11,47 +11,58 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    name: "RAG-Based Mental Health Chatbot",
+    name: "Smart Supply Chain Planner – Agentic Logistics System",
     description:
-      "Optimized a RAG system using Azure PostgreSQL and OpenAI embeddings with strong retrieval metrics and low latency.",
+      "Built a multi-agent AI system using the Model Context Protocol (MCP) to automate demand forecasting, routing, and procurement decisions.",
+    technologies: [
+      "MCP",
+      "FastAPI",
+      "LangGraph",
+      "Python OR-Tools",
+      "AWS ECS",
+      "Lambda",
+      "RDS",
+      "S3",
+      "Next.js",
+    ],
+    period: "Jul 2025 – Sep 2025",
+    achievements: [
+      "Built a multi-agent AI system using the Model Context Protocol (MCP) to automate demand forecasting, routing, and procurement decisions in a simulated logistics network spanning 80+ orders and 2 distribution centers",
+      "Implemented autonomous agents for Demand, Inventory, Procurement with FastAPI, LangGraph, and Python OR-Tools, deployed via AWS ECS, Lambda, and RDS with S3 for data storage and a Next.js dashboard for human-in-the-loop approvals",
+      "Delivered a scalable orchestration platform that reduced total route distance by 40%, cut stockouts by 30%, and lowered simulated logistics costs by 20%, while enabling real-time replanning through agentic coordination",
+    ],
+    status: "completed",
+  },
+  {
+    name: "Retrieval-Augmented Generation Based Mental Health Chatbot",
+    description:
+      "Built a supportive mental-health chatbot with a FastAPI and Uvicorn service integrating LangChain and OpenAI to deliver fast, grounded answers.",
     technologies: [
       "FastAPI",
-      "Azure PostgreSQL",
-      "OpenAI Embeddings",
+      "Uvicorn",
       "LangChain",
+      "OpenAI",
+      "Azure PostgreSQL",
       "Docker",
       "Azure App Service",
     ],
     period: "Dec 2024 – Feb 2025",
     achievements: [
-      "Achieved 98.33% unique document retrieval and 0.8127 semantic coherence score",
-      "Reduced response latency to ~1.1s through FastAPI and optimized chunking/embeddings",
-      "Deployed on Azure App Service with Docker; measured 76% retrieval precision and 100% consistency",
-    ],
-    status: "completed",
-  },
-  {
-    name: "Real-Time Network Security Intrusion Detection",
-    description:
-      "Built and deployed ML-based IDS with automated training/testing and CI/CD on AWS SageMaker.",
-    technologies: ["Python", "Scikit-learn", "AWS SageMaker", "Pandas"],
-    period: "Sep 2024 – Nov 2024",
-    achievements: [
-      "Built Logistic Regression and Random Forest detectors; reached 95% detection accuracy",
-      "Automated training/testing/deployment with a CI/CD pipeline on AWS SageMaker",
+      "Built a supportive mental-health chatbot with a FastAPI and Uvicorn service integrating LangChain and OpenAI to deliver fast, grounded answers, reducing median response time to 1.1s",
+      "Optimized a RAG pipeline on Azure PostgreSQL with OpenAI embeddings, deployed via Docker on Azure App Service, achieving 98.33% unique document retrieval",
     ],
     status: "completed",
   },
   {
     name: "E-Commerce Management System",
     description:
-      "Designed high-throughput services for product, order, and user flows with robust data integrity.",
-    technologies: ["Java", "Hibernate ORM", "MySQL", "Docker"],
+      "Implemented RESTful APIs with Spring Boot for product, order, and user management, handling up to 10,000 RPS.",
+    technologies: ["Spring Boot", "Java", "Hibernate ORM", "MySQL"],
     period: "Jul 2024 – Sep 2024",
     achievements: [
-      "Handled up to 10,000 req/s across product, order, and user services",
-      "Reduced checkout errors by 25% with real-time inventory validation",
-      "Optimized queries and models using Hibernate ORM + MySQL",
+      "Implemented RESTful APIs with Spring Boot for product, order, and user management, handling up to 10,000 RPS",
+      "Devised a shopping cart and order system with real-time inventory validation, reducing inventory update errors by 25%",
+      "Designed database models using Hibernate ORM and MySQL to ensure data consistency and optimized query performance",
     ],
     status: "completed",
   },
